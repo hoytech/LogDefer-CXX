@@ -34,8 +34,16 @@ Here is a simple example:
     } // <-- logger goes out of scope so callback is invoked now
 
 
+Todo
+----
+
+* Timers (will need to use weak pointers)
+* Data (will need to expose picojson interface)
+
+
+
 See Also
-========
+--------
 
 The [Log::Defer](https://metacpan.org/pod/Log::Defer) perl reference implementation
 
@@ -45,7 +53,7 @@ One way to display these logs is the [log-defer-viz](https://metacpan.org/pod/lo
 
 
 Author and Copyright
-====================
+--------------------
 
 Copyright (c) 2014 Doug Hoyte
 
