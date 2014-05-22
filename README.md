@@ -22,7 +22,6 @@ The basic usage is to create a new `LogDefer` object. The constructor requires o
 Here is a simple example:
 
     {
-
       LogDefer logger([](const std::string &json) {
                         // Normally we'd write this to a file/syslog/etc
                         std::cout << json << std::endl;
@@ -39,6 +38,7 @@ Todo
 
 * Timers (will need to use weak pointers)
 * Data (will need to expose picojson interface)
+* Make sure that the desctructor can't throw exceptions
 
 
 
