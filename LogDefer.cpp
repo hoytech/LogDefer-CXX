@@ -62,7 +62,7 @@ LogDefer::~LogDefer() {
   callback_(v.serialize());
 }
 
-void LogDefer::add_log(int verbosity, std::string msg) {
+void LogDefer::add_log(int verbosity, const std::string &msg) {
   picojson::array entry;
   struct timeval end_tv;
 
@@ -76,18 +76,18 @@ void LogDefer::add_log(int verbosity, std::string msg) {
   logs_.push_back(entry_val);
 }
 
-void LogDefer::error(std::string msg) {
+void LogDefer::error(const std::string &msg) {
   add_log(10, msg);
 }
 
-void LogDefer::warn(std::string msg) {
+void LogDefer::warn(const std::string &msg) {
   add_log(20, msg);
 }
 
-void LogDefer::info(std::string msg) {
+void LogDefer::info(const std::string &msg) {
   add_log(30, msg);
 }
 
-void LogDefer::debug(std::string msg) {
+void LogDefer::debug(const std::string &msg) {
   add_log(40, msg);
 }

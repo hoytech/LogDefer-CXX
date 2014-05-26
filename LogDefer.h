@@ -6,11 +6,11 @@ class LogDefer {
   public:
     LogDefer(std::function<void (const std::string&)> callback);
     ~LogDefer();
-    void add_log(int verbosity, std::string msg);
-    void error(std::string msg);
-    void warn(std::string msg);
-    void info(std::string msg);
-    void debug(std::string msg);
+    void add_log(int verbosity, const std::string &msg);
+    void error(const std::string &msg);
+    void warn(const std::string &msg);
+    void info(const std::string &msg);
+    void debug(const std::string &msg);
 
   private:
     std::function<void (const std::string &)> callback_;
