@@ -1,5 +1,4 @@
-#ifndef LOGDEFER_H
-#define LOGDEFER_H
+#pragma once
 
 #include "picojson/picojson.h"
 
@@ -20,5 +19,3 @@ class LogDefer {
     picojson::array logs_;
     picojson::array timers_;
 };
-
-#endif
