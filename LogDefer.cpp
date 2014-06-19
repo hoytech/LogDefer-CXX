@@ -6,7 +6,7 @@
 
 
 static inline picojson::value render_time(struct timeval *x) {
-  return picojson::value((double)x->tv_sec + ((double)x->tv_usec / 1000000.0));
+  return picojson::value(static_cast<double>(x->tv_sec) + (static_cast<double>(x->tv_usec) / 1000000.0));
 }
 
 static inline picojson::value time_delta(struct timeval *x, struct timeval *y) {
@@ -69,7 +69,7 @@ void LogDefer::add_log(int verbosity, const std::string &msg) {
   gettimeofday(&end_tv, NULL);
 
   entry.push_back(time_delta(&end_tv, &start_tv_));
-  entry.push_back(picojson::value((double)verbosity));
+  entry.push_back(picojson::value(static_cast<double>(verbosity)));
   entry.push_back(picojson::value(msg));
 
   picojson::value entry_val(entry);
